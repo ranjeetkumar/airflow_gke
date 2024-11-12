@@ -1,0 +1,19 @@
+# values.yaml
+dags:
+  gitSync:
+    enabled: true
+    repo: "https://github.com/ranjeetkumar/airflow_dags"  # URL of the Git repository
+    branch: "main"       # The branch to sync DAGs from
+    depth: 1             # Shallow clone for faster sync
+    subPath: ""          # Path to the DAGs folder in the repo (root in this case)
+
+# Airflow configurations
+executor: "CeleryExecutor"  # Use CeleryExecutor for distributed execution (adjust as needed)
+
+# Database (optionally adjust settings if using an external database)
+postgresql:
+  enabled: true
+
+# Redis (optionally adjust settings for Celery broker)
+redis:
+  enabled: true
